@@ -1,0 +1,244 @@
+/* ============================================================
+   Estilos Globais do CorkBoard — Windows 11 Fluent Design
+   ============================================================ */
+
+/* --- Variáveis de Tema Escuro (padrão) --- */
+:root[data-theme='dark'],
+:root {
+  /* Fundos */
+  --bg-primary: #202020;
+  --bg-secondary: #2D2D2D;
+  --bg-tertiary: #383838;
+  --bg-elevated: #3A3A3A;
+  --bg-overlay: rgba(32, 32, 32, 0.85);
+
+  /* Texto */
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-tertiary: #707070;
+  --text-disabled: #505050;
+
+  /* Acentos Fluent UI */
+  --accent-primary: #60CDFF;
+  --accent-hover: #7ADBFF;
+  --accent-active: #4AC8F5;
+  --accent-subtle: rgba(96, 205, 255, 0.15);
+
+  /* Bordas */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  /* Categorias */
+  --cor-util: #4CAF82;
+  --cor-util-bg: rgba(76, 175, 130, 0.15);
+  --cor-util-borda: rgba(76, 175, 130, 0.4);
+  --cor-potencial: #FFC107;
+  --cor-potencial-bg: rgba(255, 193, 7, 0.12);
+  --cor-potencial-borda: rgba(255, 193, 7, 0.35);
+  --cor-sem-utilidade: #F44336;
+  --cor-sem-utilidade-bg: rgba(244, 67, 54, 0.1);
+  --cor-sem-utilidade-borda: rgba(244, 67, 54, 0.3);
+  --cor-novo: #60CDFF;
+  --cor-novo-bg: rgba(96, 205, 255, 0.12);
+  --cor-novo-borda: rgba(96, 205, 255, 0.35);
+
+  /* Status */
+  --cor-erro: #F44336;
+  --cor-aviso: #FF9800;
+  --cor-sucesso: #4CAF50;
+  --cor-info: #60CDFF;
+
+  /* Sombras */
+  --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --sombra-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --sombra-elevada: 0 16px 40px rgba(0, 0, 0, 0.7);
+
+  /* Raio de Cantos (Fluent UI) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Tipografia */
+  --fonte-familia: 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --fonte-mono: 'Cascadia Code', 'Consolas', monospace;
+
+  /* Transições */
+  --transicao-rapida: 120ms ease;
+  --transicao-normal: 200ms ease;
+  --transicao-lenta: 350ms ease;
+
+  /* Header */
+  --altura-header: 48px;
+  --altura-tabbar: 44px;
+}
+
+/* --- Variáveis de Tema Claro --- */
+:root[data-theme='light'] {
+  /* Fundos */
+  --bg-primary: #F3F3F3;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #EBEBEB;
+  --bg-elevated: #FFFFFF;
+  --bg-overlay: rgba(243, 243, 243, 0.9);
+
+  /* Texto */
+  --text-primary: #1A1A1A;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --text-disabled: #BBBBBB;
+
+  /* Acentos Fluent UI */
+  --accent-primary: #0078D4;
+  --accent-hover: #106EBE;
+  --accent-active: #005A9E;
+  --accent-subtle: rgba(0, 120, 212, 0.1);
+
+  /* Bordas */
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-default: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.18);
+
+  /* Categorias */
+  --cor-util: #107C41;
+  --cor-util-bg: rgba(16, 124, 65, 0.08);
+  --cor-util-borda: rgba(16, 124, 65, 0.3);
+  --cor-potencial: #C49A00;
+  --cor-potencial-bg: rgba(196, 154, 0, 0.08);
+  --cor-potencial-borda: rgba(196, 154, 0, 0.3);
+  --cor-sem-utilidade: #C42B1C;
+  --cor-sem-utilidade-bg: rgba(196, 43, 28, 0.06);
+  --cor-sem-utilidade-borda: rgba(196, 43, 28, 0.25);
+  --cor-novo: #0078D4;
+  --cor-novo-bg: rgba(0, 120, 212, 0.08);
+  --cor-novo-borda: rgba(0, 120, 212, 0.3);
+
+  /* Status */
+  --cor-erro: #C42B1C;
+  --cor-aviso: #C49A00;
+  --cor-sucesso: #107C41;
+  --cor-info: #0078D4;
+
+  /* Sombras */
+  --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --sombra-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --sombra-elevada: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* --- Reset e Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--fonte-familia);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none; /* Evitar seleção de texto acidental */
+}
+
+/* Permitir seleção onde necessário */
+input, textarea, [contenteditable], .selecao-permitida {
+  user-select: text;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Links */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+/* Botões base */
+button {
+  font-family: var(--fonte-familia);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Inputs base */
+input, textarea {
+  font-family: var(--fonte-familia);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color var(--transicao-rapida);
+}
+input:focus, textarea:focus {
+  border-color: var(--accent-primary);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+.animacao-fadein {
+  animation: fadeIn var(--transicao-normal) ease forwards;
+}
+
+/* Balanço da cordinha ao arrastar o quadro */
+@keyframes ropeSwing {
+  0%   { filter: none; transform: translateX(0); }
+  20%  { transform: translateX(3px); }
+  40%  { transform: translateX(-2px); }
+  60%  { transform: translateX(1.5px); }
+  80%  { transform: translateX(-0.5px); }
+  100% { transform: translateX(0); }
+}

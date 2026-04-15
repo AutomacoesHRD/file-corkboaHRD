@@ -1,0 +1,64 @@
+.tabBar {
+  display: flex;
+  align-items: flex-end;
+  height: var(--altura-tabbar);
+  background-color: var(--bg-primary);
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 4px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  transition: background var(--transicao-rapida), color var(--transicao-rapida);
+  position: relative;
+  height: 36px;
+}
+.tab:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.tabAtiva {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.tabAtiva::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: 2px 2px 0 0;
+}
+
+.tabIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 16px;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}

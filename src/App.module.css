@@ -1,0 +1,70 @@
+/* Layout principal da aplicação */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Área de conteúdo principal */
+.conteudo {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Aba Índice === */
+.paginaIndice {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.listaWrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* === Aba Quadros === */
+.paginaQuadros {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+}
+
+/* === Carregando === */
+.carregando {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+}
+
+.spinnerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  color: var(--accent-primary);
+  animation: girar 1.2s linear infinite;
+}

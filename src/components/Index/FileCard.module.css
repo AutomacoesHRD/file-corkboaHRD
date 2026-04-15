@@ -1,0 +1,225 @@
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  cursor: default;
+  transition: background var(--transicao-rapida), border-color var(--transicao-rapida);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-default);
+}
+
+.cardDeletado {
+  opacity: 0.6;
+}
+.cardMovido {
+  border-color: var(--cor-aviso) !important;
+}
+.cardSemUtilidade {
+  opacity: 0.6;
+}
+
+/* === Linha 1: ícone + nomes + badge === */
+.linha1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 22px;
+}
+
+.iconeWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.iconeDeletado {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 12px;
+  height: 12px;
+  background: var(--cor-erro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.iconeDeletado svg {
+  width: 7px;
+  height: 7px;
+}
+
+.nomes {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.nomeMemoravel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  flex-shrink: 0;
+  max-width: 40%;
+}
+.nomeMemoravel:hover {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.nomePlaceholder {
+  color: var(--text-tertiary);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.separadorNome {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.nomeOriginal {
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+.inputNome {
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-sm);
+  padding: 1px 6px;
+  color: var(--text-primary);
+  width: 100%;
+  outline: none;
+}
+
+.badgeExtensao {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* === Linha 2: categoria + tags + status === */
+.linha2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 22px;
+  padding-left: 28px; /* alinha com o nome (ícone 20px + gap 8px) */
+}
+
+.seletorCategoria {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.btnCat {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  transition: all var(--transicao-rapida);
+}
+.btnCat:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+.btnCat svg {
+  width: 11px;
+  height: 11px;
+}
+
+.catUtil {
+  color: var(--cor-util) !important;
+  background: var(--cor-util-bg) !important;
+}
+.catPotencial {
+  color: var(--cor-potencial) !important;
+  background: var(--cor-potencial-bg) !important;
+}
+.catSemUtil {
+  color: var(--cor-sem-utilidade) !important;
+  background: var(--cor-sem-utilidade-bg) !important;
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.statusDeletado {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--cor-erro);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botaoRevincular {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-md);
+  color: var(--cor-aviso);
+  background: rgba(255, 152, 0, 0.1);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+  transition: all var(--transicao-rapida);
+}
+.botaoRevincular:hover {
+  background: rgba(255, 152, 0, 0.2);
+}
+.botaoRevincular svg {
+  width: 12px;
+  height: 12px;
+}

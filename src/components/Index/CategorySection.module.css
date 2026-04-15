@@ -1,0 +1,118 @@
+.secao {
+  margin-bottom: 16px;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  margin-bottom: 6px;
+  transition: background var(--transicao-rapida);
+}
+.cabecalho:hover {
+  background: var(--bg-secondary);
+}
+
+.cabecalhoEsquerda {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconeCategoria {
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+}
+.iconeCategoria svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Cores por categoria */
+.secaoUtil .iconeCategoria,
+.secaoUtil .tituloSecao { color: var(--cor-util); }
+.secaoPotencial .iconeCategoria,
+.secaoPotencial .tituloSecao { color: var(--cor-potencial); }
+.secaoSemUtilidade .iconeCategoria,
+.secaoSemUtilidade .tituloSecao { color: var(--cor-sem-utilidade); }
+.secaoNovo .iconeCategoria,
+.secaoNovo .tituloSecao { color: var(--cor-novo); }
+
+.tituloSecao {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.botaoColapsar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  transition: background var(--transicao-rapida), color var(--transicao-rapida);
+}
+.botaoColapsar:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+.botaoColapsar svg {
+  width: 12px;
+  height: 12px;
+  transition: transform var(--transicao-rapida);
+}
+
+.chevron {}
+.chevronColapsado {
+  transform: rotate(-90deg);
+}
+
+/* Lista de arquivos */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: fadeIn var(--transicao-normal) ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Bordas coloridas por categoria */
+.secaoUtil .lista > * {
+  border-left: 3px solid var(--cor-util-borda) !important;
+}
+.secaoPotencial .lista > * {
+  border-left: 3px solid var(--cor-potencial-borda) !important;
+}
+.secaoSemUtilidade .lista > * {
+  border-left: 3px solid var(--cor-sem-utilidade-borda) !important;
+  opacity: 0.7;
+}
+.secaoNovo .lista > * {
+  border-left: 3px solid var(--cor-novo-borda) !important;
+  background: var(--cor-novo-bg) !important;
+}

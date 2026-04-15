@@ -1,0 +1,88 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 150ms ease;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.dialogo {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--sombra-elevada);
+  padding: 24px;
+  max-width: 360px;
+  width: 90%;
+  animation: slideIn 150ms ease;
+}
+
+@keyframes slideIn {
+  from { transform: scale(0.9) translateY(-10px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.titulo {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.mensagem {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.botaoCancelar {
+  padding: 7px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  transition: background var(--transicao-rapida);
+}
+.botaoCancelar:hover {
+  background: var(--bg-elevated);
+}
+
+.botaoConfirmar {
+  padding: 7px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--accent-primary);
+  color: #000;
+  border: none;
+  transition: background var(--transicao-rapida);
+}
+.botaoConfirmar:hover {
+  background: var(--accent-hover);
+}
+
+.botaoPerigo {
+  background: var(--cor-erro);
+  color: white;
+}
+.botaoPerigo:hover {
+  background: #d32f2f;
+}

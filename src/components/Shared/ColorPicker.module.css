@@ -1,0 +1,66 @@
+.picker {
+  position: fixed;
+  z-index: 9999;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--sombra-elevada);
+  padding: 12px;
+  animation: fadeIn 100ms ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.cores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.botaoCor {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: transform var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+.botaoCor:hover {
+  transform: scale(1.15);
+}
+.botaoCorAtivo {
+  border-color: var(--text-primary);
+}
+.botaoCor svg {
+  width: 10px;
+  height: 10px;
+}
+
+.corCustomizada {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.inputCor {
+  width: 28px;
+  height: 28px;
+  padding: 2px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: none;
+}
+
+.textoCustomizada {
+  font-size: 12px;
+  color: var(--text-secondary);
+}

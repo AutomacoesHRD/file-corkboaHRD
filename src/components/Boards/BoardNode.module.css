@@ -1,0 +1,233 @@
+/* ============================================================
+   Estilos compartilhados para nodes do canvas do quadro
+   ============================================================ */
+
+/* === File Node === */
+.fileNode {
+  position: absolute;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  min-width: 120px;
+  max-width: 180px;
+  cursor: pointer;
+  box-shadow: var(--sombra-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  transition: border-color var(--transicao-rapida), box-shadow var(--transicao-rapida);
+}
+.fileNode:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--sombra-lg);
+}
+
+.icone {
+  flex-shrink: 0;
+}
+
+.nome {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.3;
+  max-height: 42px;
+  overflow: hidden;
+}
+
+.alertaDeletado {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  background: var(--cor-erro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.alertaDeletado svg {
+  width: 9px;
+  height: 9px;
+}
+
+.deletado {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+/* === Note Node (Post-it) === */
+.noteNode {
+  position: absolute;
+  min-width: 140px;
+  max-width: 200px;
+  min-height: 80px;
+  padding: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 2px 3px 8px rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.1);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  /* Efeito de papel dobrado */
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+.noteNode::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: rgba(0,0,0,0.15);
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
+}
+
+.conteudoNota {
+  font-size: 12px;
+  line-height: 1.5;
+  word-break: break-word;
+  flex: 1;
+  white-space: pre-wrap;
+}
+
+.textareaNota {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed rgba(0,0,0,0.2);
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: inherit;
+  outline: none;
+  resize: none;
+  width: 100%;
+  min-height: 60px;
+  font-family: var(--fonte-familia);
+}
+
+/* === Image Node === */
+.imageNode {
+  position: absolute;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--sombra-md);
+  border: 2px solid transparent;
+  transition: border-color var(--transicao-rapida);
+  min-width: 80px;
+  min-height: 60px;
+}
+.imageNode:hover {
+  border-color: var(--border-strong);
+}
+
+.imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carregandoImagem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.iconCarregar {
+  width: 24px;
+  height: 24px;
+  color: var(--accent-primary);
+  animation: girar 1s linear infinite;
+}
+
+.erroImagem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--text-tertiary);
+  font-size: 10px;
+  background: var(--bg-tertiary);
+}
+.erroImagem svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Alça de redimensionamento */
+.alcaRedimensionar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  cursor: se-resize;
+  background: var(--accent-primary);
+  border-radius: var(--radius-sm) 0 0 0;
+  opacity: 0.8;
+}
+.alcaRedimensionar::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: white;
+  border-radius: 1px;
+}
+
+/* === Estado Selecionado (compartilhado) === */
+.selecionado {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* === Pontos de Conexão === */
+.pontoCon {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-primary);
+  border: 2px solid var(--bg-secondary);
+  border-radius: 50%;
+  opacity: 0;
+  cursor: crosshair;
+  transition: opacity var(--transicao-rapida), transform var(--transicao-rapida);
+  z-index: 10;
+}
+.fileNode:hover .pontoCon,
+.noteNode:hover .pontoCon,
+.imageNode:hover .pontoCon,
+.selecionado .pontoCon {
+  opacity: 1;
+}
+.pontoCon:hover {
+  transform: scale(1.4);
+}
+
+/* Posições dos pontos de conexão */
+.pontoConN { top: -5px; left: 50%; transform: translateX(-50%); }
+.pontoConS { bottom: -5px; left: 50%; transform: translateX(-50%); }
+.pontoConE { right: -5px; top: 50%; transform: translateY(-50%); }
+.pontoConW { left: -5px; top: 50%; transform: translateY(-50%); }
+.pontoConN:hover { transform: translateX(-50%) scale(1.4); }
+.pontoConS:hover { transform: translateX(-50%) scale(1.4); }
+.pontoConE:hover { transform: translateY(-50%) scale(1.4); }
+.pontoConW:hover { transform: translateY(-50%) scale(1.4); }

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat)",
+      "Bash(node_modules/electron/dist/electron.exe .)",
+      "Bash(CSC_IDENTITY_AUTO_DISCOVERY=false WIN_CSC_LINK=\"\" npm run build)",
+      "Bash(npx electron-builder:*)"
+    ]
+  }
+}

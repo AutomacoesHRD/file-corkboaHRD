@@ -1,0 +1,197 @@
+.wrapper {
+  position: relative;
+  z-index: 1;
+  -webkit-app-region: no-drag;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  cursor: pointer;
+  transition: all 0.15s;
+  max-width: 220px;
+}
+.trigger:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.triggerLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: left;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  min-width: 280px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 6px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0;
+}
+
+.sectionTitle {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  padding: 4px 8px;
+}
+
+.empty {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  padding: 8px;
+  text-align: center;
+  font-style: italic;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.itemActive {
+  background: var(--accent-subtle);
+}
+
+.itemBtn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.1s;
+}
+.itemBtn:hover {
+  background: var(--bg-tertiary);
+}
+
+.itemPath {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.miniBtn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--text-tertiary);
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.miniBtn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.renameInput {
+  flex: 1;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--accent-primary);
+  border-radius: 4px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 4px 0;
+}
+
+.createRow {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+}
+
+.createInput {
+  flex: 1;
+  padding: 5px 8px;
+  font-size: 12px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  color: var(--text-primary);
+  outline: none;
+}
+.createInput:focus {
+  border-color: var(--accent-primary);
+}
+
+.createBtn {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--accent-primary);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actionBtn {
+  display: block;
+  width: 100%;
+  padding: 7px 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.actionBtn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}

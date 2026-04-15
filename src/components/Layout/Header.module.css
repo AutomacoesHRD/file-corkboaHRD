@@ -1,0 +1,152 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: var(--altura-header);
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 8px;
+  gap: 8px;
+  position: relative;
+  z-index: 100;
+  -webkit-app-region: no-drag;
+}
+
+/* Área de arrasto para mover a janela */
+.dragArea {
+  position: absolute;
+  inset: 0;
+  -webkit-app-region: drag;
+  z-index: 0;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  position: relative;
+  z-index: 1;
+  -webkit-app-region: no-drag;
+}
+
+.logoIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.nomeTitulo {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Área de ações no centro-direita */
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+  -webkit-app-region: no-drag;
+}
+
+.botaoAcao {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  transition: background var(--transicao-rapida), border-color var(--transicao-rapida);
+  height: 30px;
+}
+.botaoAcao:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border-strong);
+}
+.botaoAcao svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.botaoPrimario {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #000;
+}
+.botaoPrimario:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.botaoIcone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: background var(--transicao-rapida), color var(--transicao-rapida);
+}
+.botaoIcone:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+.botaoIcone svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Ícone de rotação para reescanear */
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.girandoIcon {
+  animation: girar 1s linear infinite;
+}
+
+/* Controles da janela (minimizar, maximizar, fechar) */
+.controles {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 8px;
+  position: relative;
+  z-index: 1;
+  -webkit-app-region: no-drag;
+}
+
+.botaoJanela {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 100%;
+  color: var(--text-secondary);
+  transition: background var(--transicao-rapida), color var(--transicao-rapida);
+}
+.botaoJanela:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+.botaoJanela svg {
+  width: 10px;
+  height: 10px;
+}
+
+.botaoFechar:hover {
+  background: #C42B1C !important;
+  color: white !important;
+}

@@ -1,0 +1,67 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.botaoRemover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  color: var(--accent-primary);
+  opacity: 0.7;
+  transition: opacity var(--transicao-rapida);
+  padding: 0;
+}
+.botaoRemover:hover {
+  opacity: 1;
+}
+.botaoRemover svg {
+  width: 8px;
+  height: 8px;
+}
+
+.botaoAdicionar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  border: 1px dashed var(--border-strong);
+  color: var(--text-tertiary);
+  transition: all var(--transicao-rapida);
+  flex-shrink: 0;
+}
+.botaoAdicionar:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-subtle);
+}
+.botaoAdicionar svg {
+  width: 8px;
+  height: 8px;
+}
+
+.inputTag {
+  display: inline-block;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--accent-primary);
+  color: var(--text-primary);
+  outline: none;
+  width: 80px;
+}

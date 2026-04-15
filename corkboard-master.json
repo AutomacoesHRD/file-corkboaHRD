@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "activeIndexationId": "b325d9fb-7bb6-47e0-83da-382e92fecd5f",
+  "indexations": [
+    {
+      "id": "b325d9fb-7bb6-47e0-83da-382e92fecd5f",
+      "name": "Indexação Migrada",
+      "rootPath": "C:\\Users\\Pedro Silva\\Downloads\\StructuralDoctor-screenshots",
+      "originalRootPath": "C:\\Users\\Pedro Silva\\Downloads\\StructuralDoctor-screenshots",
+      "createdAt": "2026-04-15T11:53:56.066Z"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "sortMode": "manual",
+    "language": "pt-BR"
+  }
+}

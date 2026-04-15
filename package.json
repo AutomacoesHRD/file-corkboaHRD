@@ -1,0 +1,68 @@
+{
+  "name": "file-corkboahrd",
+  "version": "1.0.0",
+  "description": "Indexador de arquivos local com quadros de cortiça visuais",
+  "main": "dist/electron/main.js",
+  "scripts": {
+    "dev": "npm run build && concurrently \"npm run dev:react\" \"npm run dev:electron\"",
+    "dev:react": "vite",
+    "dev:electron": "wait-on http://localhost:5173 && electron .",
+    "build": "vite build",
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "file-manager",
+    "corkboard"
+  ],
+  "author": "CorkBoard",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@types/tar": "^6.1.13",
+    "@types/uuid": "^9.0.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.9.1",
+    "electron-vite": "^5.0.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.1",
+    "vite-plugin-electron": "^0.28.4",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-virtuoso": "^4.6.2",
+    "tar": "^6.2.1",
+    "uuid": "^9.0.0",
+    "zustand": "^4.5.0"
+  },
+  "build": {
+    "appId": "com.file-corkboahrd.app",
+    "productName": "file-corkboaHRD",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "file-corkboaHRD-${version}-portable.exe"
+    }
+  }
+}
